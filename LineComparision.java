@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LineComparision {
 	static Scanner sc = new Scanner(System.in);
-	public static void lineEquals() {
+	public static void lineComapare() {
 		System.out.println("Welcome to Line Comparison Computation Program");
 		int x1,x2,y1,y2;
 		int p1,p2,q1,q2;
@@ -32,19 +32,24 @@ public class LineComparision {
 		System.out.println("distancebetween"+"("+p1+","+q1+"),"+"("+p2+","+q2+")"+"is"+" " + distance2);
 		Double distanceOne = distance1;
 		Double distanceTwo = distance2;
-		if (distanceOne.equals(distanceTwo))
-		{
-			System.out.println("both distances are equal");
-		}
-		else
-		{
-			System.out.println("distances are different");
-		}
+		int val = Double.compare(distanceOne,distanceTwo);
+	      if(val > 0)
+	      {
+	         System.out.println("distance1 is greater than distance2");
+	      } 
+	      else if(val < 0) 
+	      {
+	        System.out.println("distance1 is less than distance2");
+	      }
+	      else
+	      {
+	         System.out.println("distance1 is equal to distance2");
+	      }
 		
 	}
 
 	public static void main(String[] args) {
 		LineComparision lineCompariosion = new LineComparision();
-		lineCompariosion.lineEquals();
+		lineCompariosion.lineComapare();
 	}
 }
